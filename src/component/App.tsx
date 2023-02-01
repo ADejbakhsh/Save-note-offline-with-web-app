@@ -1,8 +1,19 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import logo from '../logo.svg';
+import '../App.css';
+import './Button'
+import Button from './Button';
+import { useState } from 'react';
+
 
 function App() {
+  const [count, setCount] = useState(0);
+
+
+  function handleClick() {
+      setCount(count + 1);
+    }
+
   return (
     <div className="App">
       <header className="App-header">
@@ -18,6 +29,10 @@ function App() {
         >
           Learn React
         </a>
+        <Button  count={count} onClick={handleClick} />
+        <Button  count={count} onClick={handleClick} />
+
+
       </header>
     </div>
   );
